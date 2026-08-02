@@ -38,6 +38,7 @@ function AddTaskModal({ setIsModalOpen, setTasks }) {
         <form onSubmit={handleSubmit}>
           <label htmlFor="taskName" className="block mb-2 text-gray-600">Task Name</label>
           <input type="text" name="taskName" id="taskName" className="border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+          
 
           <div className="flex justify-end mt-4 gap-x-2">
             <button type="submit" className="bg-blue-500 hover:bg-blue-600 font-bold text-white py-2 px-4 rounded">

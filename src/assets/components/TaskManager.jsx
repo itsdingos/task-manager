@@ -1,11 +1,20 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import TaskList from './TaskList'
 import AddTaskModal from './AddTaskModal';
 
 function TaskManager() {
-  const [ tasks, setTasks] = useState([])
+  const [ tasks, setTasks] = useState(
+    () => {
+      const savedTasks = localStorage.getItem('tasks');
+      return savedTasks ? JSON.parse(savedTasks) : [];
+    }
+  )
 
   const [ isModalOpen, setIsModalOpen ] = useState(false);
+
+  useEffect(() => {
+    localStorage.setItem('tasks', JSON.stringify(tasks))
+  }, [tasks])
 
   return (
     <div className="bg-gray-100 w-3xl rounded-lg shadow-md p-6">
@@ -15,7 +24,7 @@ function TaskManager() {
       <div>
         <p className="text-center text-gray-400">---- Tasks ----</p>
         <button
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
           onClick={() => setIsModalOpen(true)}
         >Add Task
         </button>
@@ -29,6 +38,7 @@ function TaskManager() {
           setIsModalOpen={setIsModalOpen}
           setTasks={setTasks}
         />)}
+        <button onClick={() => setTasks([])}>Reset</button>
     </div>
   )
 }
