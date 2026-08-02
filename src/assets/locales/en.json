@@ -1,0 +1,19 @@
+{
+    "title": "Task Manager",
+    "noTasks": "No tasks available.",
+    "addTask": {
+        "label": "Add Task",
+        "optional": "(optional)",
+        "taskName": "Task Name",
+        "taskDescription": "Task Description",
+        "dueDate": "Due Date",
+        "priority": "Priority",
+        "priotiyOptions": {
+            "low": "Low",
+            "medium": "Medium",
+            "high": "High"
+        },
+        "submit": "Submit",
+        "cancel": "Cancel"
+    }
+}

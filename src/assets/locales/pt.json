@@ -1,0 +1,19 @@
+{
+    "title": "Gerenciador de Tarefas",
+    "noTasks": "Nenhuma tarefa encontrada.",
+    "addTask": {
+        "label": "Adicionar Tarefa",
+        "optional": "(opcional)",
+        "taskName": "Nome da Tarefa",
+        "taskDescription": "Descrição da Tarefa",
+        "dueDate": "Data de Vencimento",
+        "priority": "Prioridade",
+        "priotiyOptions": {
+            "low": "Baixa",
+            "medium": "Média",
+            "high": "Alta"
+        },
+        "submit": "Enviar",
+        "cancel": "Cancelar"
+    }
+}
