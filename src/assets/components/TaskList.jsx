@@ -1,7 +1,11 @@
 import { useTranslation } from 'react-i18next';
+import { useState } from 'react';
+import TaskListItem from './TaskListItem';
 
-function TaskList( { tasks, setTasks } ) {
+function TaskList({ tasks, setTasks }) {
   const { t } = useTranslation();
+
+  const [ expandedTaskIndex, setExpandedTaskIndex ] = useState(null);
 
   function handleCheckboxChange(index) {
     const updatedTasks = [...tasks];
@@ -21,22 +25,24 @@ function TaskList( { tasks, setTasks } ) {
       <ul className="list-none list-outside">
         {
           tasks.length === 0
-          ? <p className="text-center text-gray-400">{t('noTasks')}</p>
-          : tasks.map((task, index) => {
-            return (
-              <div key={task.id} className="flex justify-between mb-2 gap-x-4">
-                <div key={task.id} className="flex items-center gap-x-4">
-                  <input name="checkbox" type="checkbox" checked={task.completed} onChange={() => handleCheckboxChange(index)} />
-                  <li
-                    className={`text-gray-700 ${task.completed ? 'line-through' : ''}`}
-                  >{task.name}</li>
-                </div>
-                <button onClick={() => handleRemoveTask(index)} className="text-red-500 hover:text-red-700">
-                  Remove
-                </button>
-              </div>
+            ? <p className="text-center text-gray-400">{t('noTasks')}</p>
+            : tasks.map((task, index) => {
+              return (
+              <TaskListItem
+                key={task.id}
+                task={task}
+                index={index}
+                expanded={index === expandedTaskIndex}
+                onRemoveTask={handleRemoveTask}
+                onCheckboxChanged={handleCheckboxChange}
+                onExpandToggle={() => {setExpandedTaskIndex(
+                  expandedTaskIndex === index
+                  ? null
+                  : index
+                )}}
+              />
             )
-          })
+            })
         }
       </ul>
     </div>

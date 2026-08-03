@@ -15,8 +15,6 @@ function TaskManager() {
   const [ isModalOpen, setIsModalOpen ] = useState(false);
 
   useEffect(() => {
-    i18n.changeLanguage('pt');
-
     localStorage.setItem('tasks', JSON.stringify(tasks))
   }, [tasks, i18n])
 

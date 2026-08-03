@@ -18,7 +18,7 @@ function AddTaskModal({ setIsModalOpen, setTasks }) {
     setTasks(prevTasks => [
       ...prevTasks,
       {
-        id: Date.now(),
+        id: dayjs(),
         name: taskInfo.taskName.value,
         description: taskInfo.description.value,
         dueDate: taskInfo.dueDate.value ? dayjs(taskInfo.dueDate.value).format('YYYY-MM-DD') : null,
