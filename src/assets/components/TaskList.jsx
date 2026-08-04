@@ -5,19 +5,26 @@ import TaskListItem from './TaskListItem';
 function TaskList({ tasks, setTasks }) {
   const { t } = useTranslation();
 
-  const [ expandedTaskIndex, setExpandedTaskIndex ] = useState(null);
+  const [expandedTaskIndex, setExpandedTaskIndex] = useState(null);
 
-  function handleCheckboxChange(index) {
-    const updatedTasks = [...tasks];
-
-    updatedTasks[index].completed = !updatedTasks[index].completed;
-
+  function handleRemoveTask(id) {
+    const updatedTasks = tasks.filter(
+      task => {
+        return task.id !== id
+      }
+    );
     setTasks(updatedTasks);
   }
 
-  function handleRemoveTask(index) {
-    const updatedTasks = tasks.filter((_, i) => i !== index);
-    setTasks(updatedTasks);
+  function handleCompleteToggle(id) {
+    const updatedTasks = tasks.map(
+      task =>
+        task.id === id
+        ? {...task, completed: !task.completed}
+        : task
+      )
+
+      setTasks(updatedTasks);
   }
 
   return (
@@ -26,22 +33,23 @@ function TaskList({ tasks, setTasks }) {
         {
           tasks.length === 0
             ? <p className="text-center text-gray-400">{t('noTasks')}</p>
-            : tasks.map((task, index) => {
+            : tasks.map((task) => {
               return (
-              <TaskListItem
-                key={task.id}
-                task={task}
-                index={index}
-                expanded={index === expandedTaskIndex}
-                onRemoveTask={handleRemoveTask}
-                onCheckboxChanged={handleCheckboxChange}
-                onExpandToggle={() => {setExpandedTaskIndex(
-                  expandedTaskIndex === index
-                  ? null
-                  : index
-                )}}
-              />
-            )
+                <TaskListItem
+                  key={task.id}
+                  task={task}
+                  expanded={task.id === expandedTaskIndex}
+                  onRemoveTask={handleRemoveTask}
+                  onExpandToggle={() => {
+                    setExpandedTaskIndex(
+                      expandedTaskIndex === task.id
+                        ? null
+                        : task.id
+                    )
+                  }}
+                  onCompleteToggle={handleCompleteToggle}
+                />
+              )
             })
         }
       </ul>
