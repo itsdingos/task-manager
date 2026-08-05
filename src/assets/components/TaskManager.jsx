@@ -15,7 +15,7 @@ function TaskManager() {
   const [ isModalOpen, setIsModalOpen ] = useState(false);
 
   useEffect(() => {
-    localStorage.setItem('tasks', JSON.stringify(tasks))
+    localStorage.setItem('tasks', JSON.stringify(tasks));
   }, [tasks, i18n])
 
   return (

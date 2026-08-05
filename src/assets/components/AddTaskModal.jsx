@@ -8,17 +8,17 @@ function AddTaskModal({ setIsModalOpen, setTasks }) {
   const { t } = useTranslation();
 
   function validateName(name) {
-    if (name.trim() === "") return "Task name is empty"
+    if (name.trim() === "") return t('errors.emptyName')
     return null
   }
 
   function validateDate(date) {
     if (!date) {
-      return "Enter valid date"
+      return t('errors.nullDate')
     }
 
-    if (dayjs(date).isBefore(dayjs())) {
-      return dayjs().format("Enter a date starting from YYYY/mm/dd")
+    if (dayjs(date).isBefore(dayjs()) && !dayjs(date).isSame(dayjs())) {
+      return t('errors.invalidDate') + dayjs().format(t('dateFormat'))
     }
 
     return null

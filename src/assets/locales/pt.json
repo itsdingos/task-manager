@@ -1,6 +1,12 @@
 {
     "title": "Gerenciador de Tarefas",
     "noTasks": "Nenhuma tarefa encontrada.",
+    "dateFormat": "DD/MM/YYYY",
+    "errors": {
+        "emptyName": "O campo nome está vazio",
+        "nullDate": "A data providenciada não é válida",
+        "invalidDate": "Providencie uma data apartir de "
+    },
     "addTask": {
         "label": "Adicionar Tarefa",
         "optional": "(opcional)",

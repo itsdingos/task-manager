@@ -1,6 +1,12 @@
 {
     "title": "Task Manager",
     "noTasks": "No tasks available.",
+    "dateFormat": "YYYY/MM/DD",
+    "errors": {
+        "emptyName": "The name field is empty",
+        "nullDate": "The date provided is not valid",
+        "invalidDate": "Provide a date starting from "
+    },
     "addTask": {
         "label": "Add Task",
         "optional": "(optional)",
