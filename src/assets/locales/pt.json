@@ -4,6 +4,7 @@
     "addTask": {
         "label": "Adicionar Tarefa",
         "optional": "(opcional)",
+        "required": "(necessário)",
         "taskName": "Nome da Tarefa",
         "taskDescription": "Descrição da Tarefa",
         "dueDate": "Data de Vencimento",

@@ -4,6 +4,7 @@
     "addTask": {
         "label": "Add Task",
         "optional": "(optional)",
+        "required": "(required)",
         "taskName": "Task Name",
         "taskDescription": "Task Description",
         "dueDate": "Due Date",
