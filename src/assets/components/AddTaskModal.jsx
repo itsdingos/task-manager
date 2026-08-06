@@ -17,7 +17,7 @@ function AddTaskModal({ setIsModalOpen, setTasks }) {
       return t('errors.nullDate')
     }
 
-    if (dayjs(date).isBefore(dayjs()) && !dayjs(date).isSame(dayjs())) {
+    if (dayjs(date).isBefore(dayjs(), "day")) {
       return t('errors.invalidDate') + dayjs().format(t('dateFormat'))
     }
 
@@ -45,7 +45,7 @@ function AddTaskModal({ setIsModalOpen, setTasks }) {
 
     setErrors(prev => ({
       ...prev,
-      dueDate: validateName(event.target.value),
+      dueDate: validateDate(event.target.value),
     }));
   }
 
@@ -99,35 +99,36 @@ function AddTaskModal({ setIsModalOpen, setTasks }) {
     <div className="fixed bg-black/50 flex items-center justify-center inset-0">
       <div className="bg-white rounded-lg shadow-md p-6 w-96 mx-auto mt-20">
         <h2 className="text-xl font-bold mb-4">{t('addTask.label')}</h2>
-
         <form onSubmit={handleSubmit}>
-          <label
-            htmlFor="taskName"
-            className={`block ${hasNameError
-              ? "text-red-600"
-              : "text-gray-600"
-              } `}>{t('addTask.taskName')} <span className='text-xs'>{t('addTask.required')}</span></label>
-          <input
-            type="text"
-            name="taskName"
-            id="taskName"
-            className={`border ${hasNameError
-              ? "border-red-600"
-              : "border-gray-300"
-              } rounded-md py-2 px-3 mt-2 focus:outline-none focus:ring-2 focus:ring-blue-500`}
-            onChange={handleNameChange}
-          />
-          {hasNameError && (
-            <p
-              className="text-xs mt-1 text-red-600"
-            >{errors.name}</p>
-          )}
+          <div className="relative">
+            <label
+              htmlFor="taskName"
+              className={`block ${hasNameError
+                ? "text-red-600"
+                : "text-gray-600"
+                } `}>{t('addTask.taskName')} <span className='text-xs'>{t('addTask.required')}</span></label>
+            <input
+              type="text"
+              name="taskName"
+              id="taskName"
+              className={`border ${hasNameError
+                ? "border-red-600"
+                : "border-gray-300"
+                } rounded-md py-2 px-3 mt-2 focus:outline-none focus:ring-2 focus:ring-blue-500`}
+              onChange={handleNameChange}
+            />
+            {hasNameError && (
+              <p
+                className="absolute text-xs text-red-600 bottom-sm"
+              >{errors.name}</p>
+            )}
+          </div>
 
           <label htmlFor="description" className="block text-gray-600 mt-4">{t('addTask.taskDescription')} <span className='text-xs'>{t('addTask.optional')}</span></label>
           <input type="text" name="description" id="description" className="border border-gray-300 rounded-md py-2 px-3 mt-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
 
           <div className="flex items-center mt-4 gap-x-4">
-            <div>
+            <div className="relative">
               <label
                 htmlFor="dueDate"
                 className={`block ${hasDateError
@@ -147,7 +148,7 @@ function AddTaskModal({ setIsModalOpen, setTasks }) {
                   } rounded-md py-2 px-3 mt-2 focus:outline-none focus:ring-2 focus:ring-blue-500`} />
               {hasDateError && (
                 <p
-                  className="text-xs mt-1 text-red-600"
+                  className="absolute text-xs bottom-sm text-red-600"
                 >{errors.date}</p>
               )}
             </div>
