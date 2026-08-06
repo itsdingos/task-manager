@@ -1,7 +1,13 @@
 {
     "title": "Task Manager",
-    "noTasks": "No tasks available.",
+    "noTasks": "No tasks available",
     "dateFormat": "YYYY/MM/DD",
+    "weekDateFormat": "MMM DD, YYYY",
+    "filterTypes": {
+        "all": "All",
+        "completed": "Completed",
+        "pending": "Pending"
+    },
     "errors": {
         "emptyName": "The name field is empty",
         "nullDate": "The date provided is not valid",
@@ -14,13 +20,14 @@
         "taskName": "Task Name",
         "taskDescription": "Task Description",
         "dueDate": "Due Date",
-        "priority": "Priority",
-        "priotiyOptions": {
-            "low": "Low",
-            "medium": "Medium",
-            "high": "High"
-        },
         "submit": "Submit",
         "cancel": "Cancel"
+    },
+    "priority": "Priority",
+    "priorityTypes": {
+        "all": "All",
+        "low": "Low",
+        "medium": "Medium",
+        "high": "High"
     }
 }

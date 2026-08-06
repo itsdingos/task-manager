@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import dayjs from 'dayjs';
+import { Priority, PriorityInfo } from '../constants/priority';
 
 function AddTaskModal({ setIsModalOpen, setTasks }) {
   const [hasSubmitted, setHasSubmitted] = useState(false);
@@ -59,7 +60,7 @@ function AddTaskModal({ setIsModalOpen, setTasks }) {
       id: dayjs(),
       name: taskInfo.taskName.value,
       description: taskInfo.description.value,
-      dueDate: taskInfo.dueDate.value ? dayjs(taskInfo.dueDate.value).format('YYYY-MM-DD') : null,
+      dueDate: dayjs(taskInfo.dueDate.value).format('YYYY-MM-DD'),
       priority: taskInfo.priority.value,
       completed: false,
     }
@@ -153,11 +154,11 @@ function AddTaskModal({ setIsModalOpen, setTasks }) {
               )}
             </div>
             <div>
-              <label htmlFor="priority" className="block text-gray-600 mt-4">{t('addTask.priority')}</label>
+              <label htmlFor="priority" className="block text-gray-600 mt-4">{t('priority')}</label>
               <select name="priority" id="priority" className="border border-gray-300 rounded-md py-2 px-3 mt-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                <option value="low">{t('addTask.priotiyOptions.low')}</option>
-                <option value="medium">{t('addTask.priotiyOptions.medium')}</option>
-                <option value="high">{t('addTask.priotiyOptions.high')}</option>
+                <option value={Priority.LOW}>{t(PriorityInfo[Priority.LOW].translationKey)}</option>
+                <option value={Priority.MEDIUM}>{t(PriorityInfo[Priority.MEDIUM].translationKey)}</option>
+                <option value={Priority.HIGH}>{t(PriorityInfo[Priority.HIGH].translationKey)}</option>
               </select>
             </div>
           </div>

@@ -1,7 +1,12 @@
 {
     "title": "Gerenciador de Tarefas",
-    "noTasks": "Nenhuma tarefa encontrada.",
+    "noTasks": "Nenhuma tarefa encontrada",
     "dateFormat": "DD/MM/YYYY",
+    "filterTypes": {
+        "all": "Todos",
+        "completed": "Completos",
+        "pending": "Pendentes"
+    },
     "errors": {
         "emptyName": "O campo nome está vazio",
         "nullDate": "A data providenciada não é válida",
@@ -14,13 +19,13 @@
         "taskName": "Nome da Tarefa",
         "taskDescription": "Descrição da Tarefa",
         "dueDate": "Data de Vencimento",
-        "priority": "Prioridade",
-        "priotiyOptions": {
-            "low": "Baixa",
-            "medium": "Média",
-            "high": "Alta"
-        },
         "submit": "Enviar",
         "cancel": "Cancelar"
+    },
+    "priority": "Prioridade",
+    "priorityTypes": {
+        "low": "Baixa",
+        "medium": "Média",
+        "high": "Alta"
     }
 }

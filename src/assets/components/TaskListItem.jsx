@@ -1,6 +1,10 @@
+import { useTranslation } from 'react-i18next'
+import dayjs from 'dayjs';
+import { PriorityInfo } from '../constants/priority'
 import TrashIcon from '../images/trash.png'
 
 function TaskListItem({ task, expanded, onRemoveTask, onExpandToggle, onCompleteToggle }) {
+  const { t } = useTranslation();
 
   return (
     <li className="flex flex-col my-2 border rounded-lg shadow-sm">
@@ -30,19 +34,20 @@ function TaskListItem({ task, expanded, onRemoveTask, onExpandToggle, onComplete
           <div>
             <div className="flex gap-x-2 items-center">
               <dt className="text-lg font-semibold">Deadline<span className="font-normal">:</span></dt>
-              <dd>{task.dueDate}</dd>
+              <dd>{dayjs(task.dueDate).format(t('weekDateFormat'))}</dd>
             </div>
+
 
             <div className="flex gap-x-2 items-center">
               <dt className="text-lg font-semibold">Priority<span className="font-normal">:</span></dt>
-              <dd>{task.priority}</dd>
+              <dd>{t(PriorityInfo[task.priority].translationKey)}</dd>
             </div>
             <div className="flex justify-center mt-8">
               <button
                 className={`${task.completed
                   ? "bg-emerald-500 hover:bg-emerald-600"
                   : "bg-rose-500 hover:bg-rose-600"
-                } text-white font-bold py-2 px-4 rounded cursor-pointer`}
+                  } text-white font-bold py-2 px-4 rounded cursor-pointer`}
                 onClick={() => { onCompleteToggle(task.id) }}
               >{
                   task.completed
