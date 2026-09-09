@@ -8,6 +8,7 @@ to practice React and frontend development.
 - React
 - JavaScript
 - Tailwind CSS
+- React Router
 
 ## Planned
 
