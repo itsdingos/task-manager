@@ -1,6 +1,8 @@
 function AllTasks() {
   return (
-    <p>test</p>
+    <div className="flex-1">
+      <p>test</p>
+    </div>
   );
 }
 

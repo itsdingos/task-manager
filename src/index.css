@@ -1,6 +1,15 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "DynaPuff";
+  src: url('./assets/fonts/DynaPuff-VariableFont.ttf') format('truetype');
+  font-weight: 400 700;
+  font-style: normal;
+}
+
 @theme {
+  --font-title: "DynaPuff", sans-serif;
+
   --color-background: #09090b;
   --color-surface: #18181b;
   --color-surface-hover: #27272a;
@@ -11,7 +20,9 @@
 
   --color-border: #3f3f46;
 
-  --color-highlight: #facc15;
+  --color-highlight-background: oklch(94.5% 0.129 101.54);
+  --color-highlight-text: oklch(14.1% 0.005 285.823);
+  --color-highlight-border: oklch(94.5% 0.129 101.54);
 
   --color-success: #34d399;
   --color-warning: #fbbf24;
