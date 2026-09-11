@@ -7,8 +7,16 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "PlusJakartaSans";
+  src: url('./assets/fonts/PlusJakartaSans-VariableFont.ttf') format('truetype');
+  font-weight: 400 700;
+  font-style: normal;
+}
+
 @theme {
   --font-title: "DynaPuff", sans-serif;
+  --font-default: "PlusJakartaSans", sans-serif;
 
   --color-background: #09090b;
   --color-surface: #18181b;
@@ -20,9 +28,10 @@
 
   --color-border: #3f3f46;
 
-  --color-highlight-background: oklch(94.5% 0.129 101.54);
+  --color-highlight-background: oklch(39.8% 0.195 277.366);
   --color-highlight-text: oklch(14.1% 0.005 285.823);
-  --color-highlight-border: oklch(94.5% 0.129 101.54);
+  --color-highlight-border: var(--color-highlight-background);
+  --color-highlight-glow: oklch(67.3% 0.182 276.935);
 
   --color-success: #34d399;
   --color-warning: #fbbf24;
