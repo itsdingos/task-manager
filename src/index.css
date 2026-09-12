@@ -18,9 +18,10 @@
   --font-title: "DynaPuff", sans-serif;
   --font-default: "PlusJakartaSans", sans-serif;
 
-  --color-background: #09090b;
-  --color-surface: #18181b;
-  --color-surface-hover: #27272a;
+  --color-background: oklch(14.1% 0.005 285.823);
+  --color-surface: oklch(21% 0.006 285.885);
+  --color-surface-hover: oklch(27.4% 0.006 286.033);
+  --color-surface-accent: oklch(37% 0.013 285.805);
 
   --color-text: #f4f4f5;
   --color-text-secondary: #a1a1aa;

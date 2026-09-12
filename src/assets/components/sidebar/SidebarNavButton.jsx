@@ -11,23 +11,14 @@ function SidebarNavButton({ path, name }) {
           my-8
           border-2 rounded-full
           font-bold 
-          transition-colors duration-200 ease-in
+          transition-all duration-200 ease-in
 
-          after:absolute
-          after:left-1
-          after:right-1
-          after:-bottom-1
-          after:h-1
-          after:rounded-full
-          after:bg-highlight-background
-          after:blur-sm
-          after:transition-opacity
-          after:duration-200
-          after:ease-in
+          shadow-xl
+          
 
          ${isActive
-            ? "bg-highlight-background text-highlight-text border-highlight-border after:opacity-100"
-            : "text-text border-border hover:bg-highlight-background hover:border-highlight-border hover:text-highlight-text after:opacity-0"
+            ? "bg-highlight-background text-highlight-text border-highlight-border shadow-highlight-glow/10"
+            : "text-text border-border hover:bg-highlight-background hover:border-highlight-border hover:text-highlight-text shadow-highlight-glow/0"
           }
         `}>
           <p>{name}</p>
