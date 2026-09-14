@@ -38,3 +38,7 @@
   --color-warning: #fbbf24;
   --color-danger: #f87171;
 }
+
+body {
+  @apply --font-default;
+}

@@ -10,7 +10,7 @@ function SidebarNavButton({ path, name }) {
           pl-4 p-2
           my-8
           border-2 rounded-full
-          font-bold 
+          font-semibold
           transition-all duration-200 ease-in
 
           shadow-xl
