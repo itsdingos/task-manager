@@ -34,9 +34,10 @@
   --color-highlight-border: var(--color-highlight-background);
   --color-highlight-glow: oklch(67.3% 0.182 276.935);
 
-  --color-success: #34d399;
-  --color-warning: #fbbf24;
-  --color-danger: #f87171;
+  --color-success: oklch(76.5% 0.177 163.223);
+  --color-warning: oklch(92.4% 0.12 95.746);
+  --color-danger: oklch(70.4% 0.191 22.216);
+  --color-low: oklch(74.6% 0.16 232.661);
 }
 
 body {
