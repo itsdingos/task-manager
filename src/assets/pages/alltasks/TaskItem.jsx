@@ -1,11 +1,11 @@
-import { GetTaskPriority } from "../../utils/TaskUtils";
+import { GetTaskPriority, GetTaskStatus } from "../../utils/TaskUtils";
 import { Clock, Flag } from "lucide-react";
 
 function TaskItem({ task }) {
   const priorityDetails = GetTaskPriority(task);
   const PriorityIcon = priorityDetails.icon
 
-  console.log(priorityDetails)
+  const statusDetails = GetTaskStatus(task);
 
   return (
     <div className="flex justify-between bg-surface-accent p-6 rounded-3xl mb-4">
@@ -28,9 +28,9 @@ function TaskItem({ task }) {
             <p>{task.dueDate}</p>
           </div>
 
-          <div className="flex mr-4 items-center">
+          <div className={`flex mr-4 items-center ${statusDetails.color}`}>
             <Flag strokeWidth={1.2} size={24} className="mr-2" />
-            <p>{task.status}</p>
+            <p>{statusDetails.display}</p>
           </div>
         </div>
       </div>
