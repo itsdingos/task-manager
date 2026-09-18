@@ -3,7 +3,7 @@ import EmptyTasksNotice from "./EmptyTasksNotice";
 import TaskItem from "./TaskItem";
 
 function AllTasks() {
-  const { tasks } = useOutletContext();
+  const { tasks, setTasks } = useOutletContext();
 
   return (
     <div className="h-full flex flex-col">
@@ -22,7 +22,7 @@ function AllTasks() {
         {tasks.length === 0
           ? <EmptyTasksNotice />
           : tasks.map(task => (
-              <TaskItem key={task.id} task={task} />
+              <TaskItem key={task.id} task={task} setTasks={setTasks} />
             ))
         }
       </div>

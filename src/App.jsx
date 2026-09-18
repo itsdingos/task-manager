@@ -41,7 +41,7 @@ function App() {
 
         <main className="w-full h-full bg-surface-hover rounded-4xl">
           <div className="p-8 h-full">
-            <Outlet context={{tasks, setTasks}} />
+            <Outlet context={{ tasks, setTasks }} />
           </div>
         </main>
       </div>

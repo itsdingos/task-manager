@@ -9,6 +9,7 @@ to practice React and frontend development.
 - JavaScript
 - Tailwind CSS
 - React Router
+- DayJs
 
 ## Planned
 
