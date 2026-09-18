@@ -1,12 +1,17 @@
+import { useState } from "react";
 import { useOutletContext } from "react-router";
 import EmptyTasksNotice from "./EmptyTasksNotice";
 import TaskItem from "./TaskItem";
+import Warning from "./Warning";
 
 function AllTasks() {
   const { tasks, setTasks } = useOutletContext();
+  const [taskToDelete, setTaskToDelete] = useState(null);
 
   return (
     <div className="h-full flex flex-col">
+      {taskToDelete !== null && <Warning taskToDelete={taskToDelete} setToDeleteTask={setTaskToDelete} setTasks={setTasks} />}
+
       <div className="bg-surface-accent w-full h-16 shrink-0">
       </div>
 
@@ -22,8 +27,8 @@ function AllTasks() {
         {tasks.length === 0
           ? <EmptyTasksNotice />
           : tasks.map(task => (
-              <TaskItem key={task.id} task={task} setTasks={setTasks} />
-            ))
+            <TaskItem key={task.id} task={task} setTaskToDelete={setTaskToDelete} />
+          ))
         }
       </div>
     </div>

@@ -1,6 +1,6 @@
 import { Outlet } from "react-router"
 import Sidebar from "./assets/components/sidebar/Sidebar"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 // Remove dev shortcut later.
 
@@ -31,6 +31,10 @@ function App() {
     const savedTasks = localStorage.getItem("tasks");
     return savedTasks ? JSON.parse(savedTasks) : [];
   });
+
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks))
+  }, [tasks])
 
   return (
     <div className="bg-background h-screen flex justify-center items-center p-16 font-default">

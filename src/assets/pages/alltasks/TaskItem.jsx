@@ -2,7 +2,7 @@ import dayjs from "dayjs";
 import { GetTaskPriority, GetTaskStatus } from "../../utils/TaskUtils";
 import { Clock, Flag } from "lucide-react";
 
-function TaskItem({ task, setTasks }) {
+function TaskItem({ task, setTaskToDelete }) {
   const priorityDetails = GetTaskPriority(task);
   const PriorityIcon = priorityDetails.icon
 
@@ -10,10 +10,6 @@ function TaskItem({ task, setTasks }) {
 
   const dueDate = dayjs(task.dueDate)
   const today = dayjs();
-
-  function handleTaskDelete(taskId) {
-    setTasks(prevTasks => prevTasks.filter(task => (task.id !== taskId)));
-  }
 
   return (
     <div className="flex justify-between bg-surface-accent p-6 rounded-3xl mb-4">
@@ -52,9 +48,7 @@ function TaskItem({ task, setTasks }) {
           hover:bg-danger hover:text-highlight-text
           transition-all duration-150"
         
-        onClick={() => {
-          handleTaskDelete(task.id)
-        }}
+        onClick={() => {setTaskToDelete(task.id)}}
         
         >Delete</button>
     </div>
