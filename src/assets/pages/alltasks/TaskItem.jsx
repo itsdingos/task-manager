@@ -1,6 +1,7 @@
 import dayjs from "dayjs";
 import { GetTaskPriority, GetTaskStatus } from "../../utils/TaskUtils";
 import { Clock, Flag } from "lucide-react";
+import Button from "../../components/Button";
 
 function TaskItem({ task, setTaskToDelete }) {
   const priorityDetails = GetTaskPriority(task);
@@ -41,16 +42,7 @@ function TaskItem({ task, setTaskToDelete }) {
         </div>
       </div>
 
-      <button
-        className="
-          my-auto px-4 py-2 border rounded-full cursor-pointer
-          border-danger text-danger
-          hover:bg-danger hover:text-highlight-text
-          transition-all duration-150"
-        
-        onClick={() => {setTaskToDelete(task.id)}}
-        
-        >Delete</button>
+      <Button displayText="Delete" variant="danger" onClick={() => {setTaskToDelete(task.id)}} />
     </div>
 
   )
