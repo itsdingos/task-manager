@@ -18,21 +18,21 @@
   --font-title: "DynaPuff", sans-serif;
   --font-default: "PlusJakartaSans", sans-serif;
 
-  --color-background: oklch(14.1% 0.005 285.823);
-  --color-surface: oklch(21% 0.006 285.885);
-  --color-surface-hover: oklch(27.4% 0.006 286.033);
-  --color-surface-accent: oklch(37% 0.013 285.805);
+  --color-background: oklch(14.7% 0.004 49.3);
+  --color-surface-primary: oklch(21.4% 0.009 43.1);
+  --color-surface-secondary: oklch(26.8% 0.011 36.5);
+  --color-surface-tertiary: oklch(36.7% 0.016 35.7);
 
   --color-text: #f4f4f5;
-  --color-text-secondary: #a1a1aa;
+  --color-text-secondary: oklch(71.4% 0.014 41.2);
   --color-text-muted: #71717a;
 
-  --color-border: #3f3f46;
+  --color-border: oklch(90.1% 0.076 70.697);
 
-  --color-highlight-background: oklch(39.8% 0.195 277.366);
-  --color-highlight-text: oklch(14.1% 0.005 285.823);
+  --color-highlight-background: oklch(90.1% 0.076 70.697);
+  --color-highlight-text: oklch(21.4% 0.009 43.1);
   --color-highlight-border: var(--color-highlight-background);
-  --color-highlight-glow: oklch(67.3% 0.182 276.935);
+  --color-highlight-glow: oklch(95.4% 0.038 75.164);
 
   --color-success: oklch(76.5% 0.177 163.223);
   --color-warning: oklch(92.4% 0.12 95.746);
@@ -42,4 +42,48 @@
 
 body {
   @apply --font-default;
+}
+
+@keyframes modal-in {
+  from {
+    opacity: 0;
+    transform: translateY(-1rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes modal-out {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+}
+
+@keyframes backdrop-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes backdrop-out {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
 }

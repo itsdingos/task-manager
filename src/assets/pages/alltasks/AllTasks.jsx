@@ -12,7 +12,7 @@ function AllTasks() {
     <div className="h-full flex flex-col">
       {taskToDelete !== null && <Warning taskToDelete={taskToDelete} setToDeleteTask={setTaskToDelete} setTasks={setTasks} />}
 
-      <div className="bg-surface-accent w-full h-16 shrink-0">
+      <div className="bg-surface-tertiary w-full h-16 shrink-0">
       </div>
 
       <h1 className="font-title font-bold text-text text-2xl mt-8">

@@ -13,7 +13,7 @@ function TaskItem({ task, setTaskToDelete }) {
   const today = dayjs();
 
   return (
-    <div className="flex justify-between bg-surface-accent p-6 rounded-3xl mb-4">
+    <div className="flex justify-between bg-surface-tertiary p-6 rounded-3xl mb-4">
       <div className="flex flex-col">
         <div className="flex">
           <div className="w-16 h-16 bg-text rounded-full mr-4 mb-4"></div>

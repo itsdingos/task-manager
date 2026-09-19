@@ -11,15 +11,20 @@ function Warning({ taskToDelete, setToDeleteTask, setTasks }) {
   }
 
   return createPortal(
-    <div className="fixed inset-0 bg-black/25 flex justify-center items-center">
+    <div className="
+      fixed inset-0 bg-black/25 flex justify-center items-center
+      animate-[backdrop-in_200ms_ease-out_forwards]
+    ">
       <div className="
           w-[50%] max-w-lg
           min-h-48 max-h-[90vh]
           p-6
           rounded-4xl
-          bg-surface-accent
+          bg-surface-tertiary
           flex flex-col justify-between
           overflow-y-auto
+
+          animate-[modal-in_200ms_ease-out_forwards]
         ">
         <p className="text-text text-lg">Are you sure you want to delete this task?<br />
           <span className="font-bold">(This action cannot be undone)</span>

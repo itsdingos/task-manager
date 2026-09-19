@@ -38,12 +38,12 @@ function App() {
 
   return (
     <div className="bg-background h-screen flex justify-center items-center p-16 font-default">
-      <div className="bg-surface w-full h-full rounded-4xl flex">
+      <div className="bg-surface-primary w-full h-full rounded-4xl flex">
         <aside>
           <Sidebar />
         </aside>
 
-        <main className="w-full h-full bg-surface-hover rounded-4xl">
+        <main className="w-full h-full bg-surface-secondary rounded-4xl">
           <div className="p-8 h-full">
             <Outlet context={{ tasks, setTasks }} />
           </div>
