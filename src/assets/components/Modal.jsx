@@ -10,6 +10,7 @@ function Modal({ isOpen, onClose, ref, children }) {
 
       setTimeout(() => {
         onClose();
+        setIsClosing(false);
       }, 200)
     }
   }));
