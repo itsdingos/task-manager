@@ -1,6 +1,7 @@
 import { Outlet } from "react-router"
 import Sidebar from "./assets/components/sidebar/Sidebar"
 import { useEffect, useState } from "react"
+import dayjs from "dayjs";
 
 // Remove dev shortcut later.
 
@@ -10,7 +11,7 @@ window.addTestTask = function () {
     name: "Test Task",
     description: "This is a test task",
     priority: "medium",
-    dueDate: "2026-09-15",
+    dueDate: dayjs(),
     status: "pending"
   };
 

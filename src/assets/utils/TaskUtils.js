@@ -1,23 +1,23 @@
-import { LayerArrowUp, Layers2, LayerArrowDown } from "lucide-react"
+import { SignalHigh, SignalLow, SignalMedium } from "lucide-react"
 
 export const TaskPriority = {
   high: {
     display: "High",
-    icon: LayerArrowUp,
+    icon: SignalHigh,
     color: "text-danger",
     order: 0
   },
 
   medium: {
     display: "Medium",
-    icon: Layers2,
+    icon: SignalMedium,
     color: "text-muted",
     order: 1
   },
 
   low: {
     display: "Low",
-    icon: LayerArrowDown,
+    icon: SignalLow,
     color: "text-low",
     order: 2
   },
